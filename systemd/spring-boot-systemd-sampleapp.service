@@ -1,0 +1,13 @@
+[Unit]
+Description="Sample Application for running spring boot app with systemd"
+After=syslog.target
+
+[Service]
+User=sampleapp
+ExecStart=/opt/start-spring-boot-systemd-sampleapp.sh
+SuccessExitStatus=143
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
